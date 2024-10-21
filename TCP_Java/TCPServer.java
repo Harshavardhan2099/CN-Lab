@@ -47,6 +47,7 @@ public class TCPServer extends JFrame {
         setVisible(true);
     }
 
+    @SuppressWarnings("resource")
     public void startServer() {
         try {
             ServerSocket welcomeSocket = new ServerSocket(5555);

@@ -47,6 +47,7 @@ public class TCPClient extends JFrame {
         setVisible(true);
     }
 
+    @SuppressWarnings("resource")
     public void startClient() {
         try {
             Socket clientSocket = new Socket("localhost", 5555);
