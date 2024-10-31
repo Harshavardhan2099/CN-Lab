@@ -1,0 +1,35 @@
+BEGIN {
+send = 0
+recd = 0 
+drop = 0 
+starttime = 0
+endtime = 0
+flug = 0
+}
+
+{
+if ($1 == "s") {
+send++; 
+}
+if ($1 == "r" && $4 == 5){
+recd++; 
+data += $6
+if(flug == 0) {
+starttime = $2
+flug = 1
+}
+endtime = $2
+}
+if ($1 == "d") {
+drop++; 
+}
+}
+
+END {
+print "Packets received: " recd 
+print "Packets Dropped : " drop
+delay = endtime - starttime
+throughput = data / delay 
+print "Throughput: " throughput 
+print "Delay: " delay 
+}
