@@ -6,7 +6,7 @@ public class FTPClient {
         // create a socket to connect to the server
         Socket socket = new Socket("localhost", 5000);
         // file input stream to read input from the file
-        FileInputStream fs = new FileInputStream("D:\\sample.txt");
+        FileInputStream fs = new FileInputStream("D:\\dirsample.txt");
         // Output stream to write output to the socket
         OutputStream os = socket.getOutputStream();
 
